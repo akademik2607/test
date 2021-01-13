@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <meta name='viewport' content='width=device-width, scale=1.0'/>
+        <title>Задание 5</title>
+    </head>
+    <body>
+        <div class='container'>
+            
+        </div>
+        <script>
+            //Написал js код в файле с html для наглядности и удобства проверки
+            'use strict';
+            const container = document.querySelector('.container');
+            const createButtons = (countButtons) => {
+                for(let i = 0; i < countButtons; ++i){
+                    let button = document.createElement('button');
+                    button.classList.add('button');
+                    button.textContent = i + 1;
+                    container.append(button);
+                    button.style.display = 'block';
+                }
+          } 
+
+        const clickButtons = () =>{
+            container.addEventListener('click', (event) =>{
+                const target = event.target;
+                if(target.matches('.button')){
+                    const buttons = document.querySelectorAll('.button');
+                    container.append(buttons[0]);
+                }
+            });
+        }
+        createButtons(3);
+        clickButtons();
+        </script>
+    </body>
+</html>
