@@ -83,4 +83,4 @@ $query = "INSERT INTO bills_ru_events (date, title, url)
         $query .= $i < (count($dates) - 1) ? ', ' : ';';
     }
     
-    db_request('localhost', 'root', 'Hesaga0808!', 'shop', $query);
+    db_request($host, $user, $password, $database, $query);
